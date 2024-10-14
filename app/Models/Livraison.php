@@ -15,4 +15,24 @@ class Livraison extends Model
         'quantite'
     ];
     use HasFactory;
+
+    public function commande()
+    {
+        return $this->belongsTo(Commande::class);
+    }
+
+    public function fournisseur()
+    {
+        return $this->belongsTo(Fourniseur::class);
+    }
+
+    public function factures()
+    {
+        return $this->hasMany(Facture::class);
+    }
+
+    public function getLivraison(){
+        return Livraison::all();
+    }
+
 }

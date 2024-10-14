@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('fourniseurs', function (Blueprint $table) {
-            $table->id('fournisseur_id' , 3);
+        Schema::create('fournisseurs', function (Blueprint $table) {
+            $table->id();
             $table->string('nom_fournisseur', 100);
             $table->string('adresse',50);
             $table->timestamps();

@@ -12,4 +12,14 @@ class Facture extends Model
         'livraison_id',
     ];
     use HasFactory;
+
+    public function livraison()
+    {
+        return $this->belongsTo(Livraison::class);
+    }
+
+    public function getFacture(){
+        return SousFournisseur::all();
+    }
+
 }

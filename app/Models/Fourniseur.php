@@ -13,4 +13,18 @@ class Fourniseur extends Model
         'adresse',
     ];
     use HasFactory;
+
+    public function livraisons()
+    {
+        return $this->hasMany(Livraison::class);
+    }
+
+    public function sous_fournisseurs()
+    {
+        return $this->hasMany(SousFournisseur::class);
+    }
+
+    public function getFournisseur(){
+        return Fourniseur::all();
+    }
 }

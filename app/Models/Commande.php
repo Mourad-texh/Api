@@ -12,6 +12,32 @@ class Commande extends Model
     protected $fillable = [
         'evenement_id',
         'quantite_commande',
+        'description'
     ];
     use HasFactory;
+
+    public function evenement()
+    {
+        return $this->belongsTo(Evenement::class);
+    }
+    public function fournisseurs()
+    {
+        return $this->belongsToMany(Fourniseur::class);
+    }
+
+    public function sous_fournisseurs()
+    {
+        return $this->belongsToMany(SousFournisseur::class);
+    }
+
+    public function getCommande(){
+        return Commande::all();
+    }
+
+
+
+
+
+
+    
 }

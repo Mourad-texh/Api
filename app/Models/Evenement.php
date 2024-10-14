@@ -12,4 +12,8 @@ class Evenement extends Model
         'nom_evenement',
     ];
     use HasFactory;
+
+    public function getEvenement(){
+        return SousFournisseur::all();
+    }
 }
